@@ -31,13 +31,15 @@ void setup () {
     while (1);
   }
 
-  if (! rtc.isrunning()) {
-    Serial.println("RTC is NOT running!");
+  if (!Serial) {
+    Serial.println("...");
+  }else{
+    Serial.println("Pluged into PC, sync up the time to PC!");
     // following line sets the RTC to the date & time this sketch was compiled
-    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+     rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
     // This line sets the RTC with an explicit date & time, for example to set
     // January 21, 2014 at 3am you would call:
-    // rtc.adjust(DateTime(2014, 1, 21, 3, 0, 0));
+     //rtc.adjust(DateTime(2017, 11, 21, 21, 48, 0));
   }
 }
 
